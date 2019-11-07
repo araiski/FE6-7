@@ -5,8 +5,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
 
-@Controller
+@RestController
 @RequestMapping("/post")
 @Slf4j
 public class PostController {
@@ -15,6 +16,6 @@ public class PostController {
                               @RequestParam("postBody") String body,
                                 @RequestParam("date") String date) {
         log.info("Request received. Title={}, body={}, date={}", title, body, date);
-        return "index.html";
+        return "New post created";
     }
 }
